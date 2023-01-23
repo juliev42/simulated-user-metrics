@@ -66,7 +66,7 @@ def make_longform_data_frame(num_employees, num_weeks):
             week_k_messages_sent.append(messages_sent)
             
         data_dict[person] = [department, creation_date, week_k_days_active, week_k_messages_sent, ]
-    df = pd.DataFrame.from_dict(data_dict, orient='index', columns=['department', 'acct_created', 'days_active', 'messages_sent'])
+    df = pd.DataFrame.from_dict(data_dict, orient='index', columns=['department', 'acct_creation_date', 'days_active', 'messages_sent'])
     return df
 
         
