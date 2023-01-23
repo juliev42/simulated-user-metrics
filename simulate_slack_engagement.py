@@ -85,14 +85,13 @@ st.write(df_long[['department',  'acct_creation_date']])
 
 st.write('Here are the data on messages sent for the past {} weeks:'.format(num_weeks))
 
-df_long = make_longform_data_frame(num_employees, num_weeks)
 week_labels = [get_date_n_weeks_ago(i) for i in range(num_weeks)]
 longform_messages_sent = pd.DataFrame(df_long['messages_sent'].tolist(), index=df_long.index, columns=[f'm_{w}' for w in week_labels])
 joined_df = pd.concat([df_long[['department']], longform_messages_sent], axis = 1)
 st.write(joined_df)
 
 
-st.write('Here is a plot of the messages sent for the past {} weeks by department'.format(num_weeks))
+st.write('Here is a plot of the messages sent for the past {} weeks by department.'.format(num_weeks))
 
 aggregate = joined_df.groupby('department').agg('mean', numeric_only=True)
 fig = plt.figure(figsize=(10, 4))
@@ -105,6 +104,8 @@ plt.title('Avg Messages Sent by Department')
 plt.legend(loc=(1.04, 0))
 
 st.pyplot(fig)
+
+st.write('In this simulation, the departments trend towards either maximum engagement or disengagement over time. Design, Engineering, Marketing, Product, and Sales trend towards 0 engagement.')
 
 
 
