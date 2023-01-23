@@ -76,8 +76,7 @@ st.write('Let\'s simulate some fake engagement data for a Slack workspace. We\'l
 
 num_employees = st.slider('How many employees?', 1, 100, 10)
 
-st.write('How many weeks of data would you like to simulate?')
-num_weeks = st.slider('How many weeks?', 1, 20, 1)
+num_weeks = st.slider('How many weeks of data would you like to simulate?', 1, 20, 1)
 
 st.write('Here are your fake employees:')
 df_long = make_longform_data_frame(num_employees, num_weeks)
@@ -105,7 +104,7 @@ plt.legend(loc=(1.04, 0))
 
 st.pyplot(fig)
 
-st.write('In this simulation, the departments trend towards either maximum engagement or disengagement over time. Design, Engineering, Marketing, Product, and Sales trend towards 0 engagement.')
+st.write('In this simulation, the departments trend towards either maximum engagement or disengagement over time. Design, Engineering, Marketing, Product, and Sales trend towards minimum engagement.')
 
 
 
