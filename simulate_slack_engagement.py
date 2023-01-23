@@ -79,8 +79,8 @@ st.write('How many weeks of data would you like to simulate?')
 num_weeks = st.slider('How many weeks?', 1, 20, 1)
 
 st.write('Here are your fake employees:')
-df = make_init_data_frame(num_employees)
-st.write(df[['department',  'acct_creation_date']])
+df_long = make_longform_data_frame(num_employees, num_weeks)
+st.write(df_long[['department',  'acct_creation_date']])
 
 st.write('Here are the data on messages sent for the past {} weeks:'.format(num_weeks))
 
