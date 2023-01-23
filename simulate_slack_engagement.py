@@ -57,6 +57,7 @@ def make_longform_data_frame(num_employees, num_weeks):
         department = departments[department_ind]
         week_k_days_active = []
         week_k_messages_sent = []
+        creation_date = acct_created
         for k in range(num_weeks):
             prob_active_week_k = get_prob_activity_given_week(k)
             days_active = np.random.binomial(5, prob_active_week_k[department_ind]) #modeling days active as a binomial distribution
@@ -64,8 +65,8 @@ def make_longform_data_frame(num_employees, num_weeks):
             week_k_days_active.append(days_active)
             week_k_messages_sent.append(messages_sent)
             
-        data_dict[person] = [department, week_k_days_active, week_k_messages_sent, ]
-    df = pd.DataFrame.from_dict(data_dict, orient='index', columns=['department', 'days_active', 'messages_sent'])
+        data_dict[person] = [department, creation_date, week_k_days_active, week_k_messages_sent, ]
+    df = pd.DataFrame.from_dict(data_dict, orient='index', columns=['department', 'acct_created', 'days_active', 'messages_sent'])
     return df
 
         
