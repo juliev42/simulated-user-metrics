@@ -104,7 +104,7 @@ plt.legend(loc=(1.04, 0))
 
 st.pyplot(fig)
 
-st.write('In this simulation, the departments trend towards either maximum engagement or disengagement over time. Design, Engineering, Marketing, Product, and Sales trend towards minimum engagement.')
+st.write('In this simulation, the departments trend towards either minimum or maximum engagement over time. Design, Engineering, Marketing, Product, and Sales trend towards minimum engagement.')
 
 
 
