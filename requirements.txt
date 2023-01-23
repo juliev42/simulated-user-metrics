@@ -1,8 +1,8 @@
-  - python
-  - numpy
-  - scipy
-  - pandas
-  - matplotlib
-  - seaborn
-  - streamlit
-  - names
+  python
+  numpy
+  scipy
+  pandas
+  matplotlib
+  seaborn
+  streamlit
+  names==0.3.0
