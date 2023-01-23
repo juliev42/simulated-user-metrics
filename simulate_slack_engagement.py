@@ -86,7 +86,7 @@ st.write(df_long[['department',  'acct_creation_date']])
 st.write('Here are the data on messages sent for the past {} weeks:'.format(num_weeks))
 
 week_labels = [get_date_n_weeks_ago(i) for i in range(num_weeks)]
-longform_messages_sent = pd.DataFrame(df_long['messages_sent'].tolist(), index=df_long.index, columns=[f'm_{w}' for w in week_labels])
+longform_messages_sent = pd.DataFrame(df_long['messages_sent'].tolist(), index=df_long.index, columns=[f'm_{w}' for w in week_labels.reverse()])
 joined_df = pd.concat([df_long[['department']], longform_messages_sent], axis = 1)
 st.write(joined_df)
 
